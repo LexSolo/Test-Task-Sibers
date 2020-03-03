@@ -21,8 +21,15 @@ public class NewsController {
         this.newsService = newsService;
     }
 
+    @GetMapping
+    public String showGreeting() {
+        return newsService.showGreeting();
+    }
+
     @GetMapping("10/")
     public List<NewsDTO> getListOfAllNews() {
         return newsService.getListOfAllNews();
     }
+
+
 }

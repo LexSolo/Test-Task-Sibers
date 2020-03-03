@@ -18,6 +18,10 @@ public class NewsService {
         this.newsRepository = newsRepository;
     }
 
+    public String showGreeting() {
+        return "Welcome!";
+    }
+
     public List<NewsDTO> getListOfAllNews() {
         Iterable<NewsDTO> newsFromDB = newsRepository.findAll();
 
