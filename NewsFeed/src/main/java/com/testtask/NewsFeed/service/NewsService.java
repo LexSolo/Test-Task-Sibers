@@ -32,4 +32,15 @@ public class NewsService {
 
         return newsList;
     }
+
+    public boolean addNews(NewsDTO newsDTO) {
+        for (NewsDTO news : getListOfAllNews()) {
+            if (news.getHeader().equals(newsDTO.getHeader()))
+                return false;
+        }
+
+        newsRepository.save(newsDTO);
+
+        return true;
+    }
 }
