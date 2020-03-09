@@ -1,6 +1,6 @@
 package com.testtask.NewsFeed.controller;
 
-import com.testtask.NewsFeed.model.NewsDTO;
+import com.testtask.NewsFeed.model.NewsDto;
 import com.testtask.NewsFeed.service.NewsService;
 import com.testtask.NewsFeed.utils.AddressConstants;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +50,7 @@ public class NewsController {
      * @return List of NewsDto elements.
      * */
     @GetMapping(value = "allNews/")
-    public List<NewsDTO> getListOfAllNews() {
+    public List<NewsDto> getListOfAllNews() {
         return newsService.getListOfAllNews();
     }
 
@@ -61,7 +61,7 @@ public class NewsController {
      * @return ResponseEntity class with success http code if the news exists else error http code.
      * */
     @PostMapping(value = "add-news/")
-    public ResponseEntity<?> addNews(@RequestBody NewsDTO newsDTO) {
+    public ResponseEntity<?> addNews(@RequestBody NewsDto newsDTO) {
         if (!newsService.addNews(newsDTO)) {
             System.out.println("Error. The news with this header exists. Nothing to add.");
             return (ResponseEntity<?>) ResponseEntity.badRequest();

@@ -1,6 +1,6 @@
 package com.testtask.NewsFeed.repository;
 
-import com.testtask.NewsFeed.model.NewsDTO;
+import com.testtask.NewsFeed.model.NewsDto;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,5 +14,5 @@ import javax.transaction.Transactional;
 @Repository
 // annotation for automatic generation objects for database-java connection
 @Transactional
-public interface NewsRepository extends CrudRepository<NewsDTO, Long> {
+public interface NewsRepository extends CrudRepository<NewsDto, Long> {
 }

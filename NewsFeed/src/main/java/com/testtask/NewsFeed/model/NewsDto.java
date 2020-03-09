@@ -6,7 +6,7 @@ import java.util.Calendar;
 
 @Entity
 @Table(name = "news")
-public class NewsDTO {
+public class NewsDto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,7 +17,7 @@ public class NewsDTO {
     private String newsBody;
     private URL image;
 
-    public NewsDTO() {
+    public NewsDto() {
     }
 
     public long getId() {

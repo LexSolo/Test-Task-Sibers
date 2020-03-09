@@ -1,6 +1,6 @@
 package com.testtask.NewsFeed.service;
 
-import com.testtask.NewsFeed.model.NewsDTO;
+import com.testtask.NewsFeed.model.NewsDto;
 import com.testtask.NewsFeed.repository.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,11 +39,11 @@ public class NewsService {
      *
      * @return List of NewsDto elements from database.
      * */
-    public List<NewsDTO> getListOfAllNews() {
-        Iterable<NewsDTO> newsFromDB = newsRepository.findAll();
+    public List<NewsDto> getListOfAllNews() {
+        Iterable<NewsDto> newsFromDB = newsRepository.findAll();
 
-        List<NewsDTO> newsList = new ArrayList<>();
-        for (NewsDTO news : newsFromDB) {
+        List<NewsDto> newsList = new ArrayList<>();
+        for (NewsDto news : newsFromDB) {
             newsList.add(news);
         }
 
@@ -56,8 +56,8 @@ public class NewsService {
      * @param newsDTO is the transformed news from database to lava class.
      * @return true if the news exists and saves if in the database else false with the message.
      * */
-    public boolean addNews(NewsDTO newsDTO) {
-        for (NewsDTO news : getListOfAllNews()) {
+    public boolean addNews(NewsDto newsDTO) {
+        for (NewsDto news : getListOfAllNews()) {
             if (news.getHeader().equals(newsDTO.getHeader())) {
                 System.out.println("Error. The news with this header exists. Nothing to add.");
                 return false;
