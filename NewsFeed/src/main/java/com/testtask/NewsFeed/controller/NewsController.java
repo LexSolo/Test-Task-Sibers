@@ -16,7 +16,7 @@ import java.util.List;
  * However, it is the problems possible to use this library on your computer without installing required components.
  * So that, I refused to use Lombok.
  *
- * This is the simple controller class below.
+ * This is the simple controller class for call forwarding the requests to service.
  * */
 
 // indicates the RESTful app for Spring and the Controller class at the same time
@@ -57,6 +57,7 @@ public class NewsController {
     /**
      * Checks if the news with the header exists and returns the http code.
      *
+     * @param newsDTO is the transformed news from database to lava class.
      * @return ResponseEntity class with success http code if the news exists else error http code.
      * */
     @PostMapping(value = "add-news/")
