@@ -57,12 +57,12 @@ public class NewsController {
     /**
      * Checks if the news with the header exists and returns the http code.
      *
-     * @param newsDTO is the transformed news from database to lava class.
+     * @param newsDto is the transformed news from database to lava class.
      * @return ResponseEntity class with success http code if the news exists else error http code.
      * */
     @PostMapping(value = "add-news/")
-    public ResponseEntity<?> addNews(@RequestBody NewsDto newsDTO) {
-        if (!newsService.addNews(newsDTO)) {
+    public ResponseEntity<?> addNews(@RequestBody NewsDto newsDto) {
+        if (!newsService.addNews(newsDto)) {
             System.out.println("Error. The news with this header exists. Nothing to add.");
             return (ResponseEntity<?>) ResponseEntity.badRequest();
         }

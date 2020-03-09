@@ -53,18 +53,18 @@ public class NewsService {
     /**
      * Checks if the news with the header exists and returns the boolean value.
      *
-     * @param newsDTO is the transformed news from database to lava class.
+     * @param newsDto is the transformed news from database to lava class.
      * @return true if the news exists and saves if in the database else false with the message.
      * */
-    public boolean addNews(NewsDto newsDTO) {
+    public boolean addNews(NewsDto newsDto) {
         for (NewsDto news : getListOfAllNews()) {
-            if (news.getHeader().equals(newsDTO.getHeader())) {
+            if (news.getHeader().equals(newsDto.getHeader())) {
                 System.out.println("Error. The news with this header exists. Nothing to add.");
                 return false;
             }
         }
 
-        newsRepository.save(newsDTO);
+        newsRepository.save(newsDto);
 
         return true;
     }
