@@ -9,10 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-// indicates the RESTful app for Spring and the Controller class at the same time
-@RestController
-// the default address for appealing to the app
-@RequestMapping(AddressConstants.DEFAULT_ADDRESS)
 /**
  * I'd like to add project Lombok annotations to make the dependency injection easier.
  * Instead of writing @Autowired annotation near the constructor below I could write @RequiredArgsConstructor annotation,
@@ -22,6 +18,11 @@ import java.util.List;
  *
  * This is the simple controller class below.
  * */
+
+// indicates the RESTful app for Spring and the Controller class at the same time
+@RestController
+// the default address for appealing to the app
+@RequestMapping(AddressConstants.DEFAULT_ADDRESS)
 public class NewsController {
 
     // the field for connection wih the service
